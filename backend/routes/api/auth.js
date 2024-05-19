@@ -23,7 +23,7 @@ app.post("/login", async (req, res) => {
         const token = sign_jwt({ id: user._id });
         return res
           .status(200)
-          .json({ message: "Successfully logged in", token });
+          .json({ message: "Successfully logged in", token, user });
       } else {
         return res.status(400).json({ message: "Wrong Password" });
       }
@@ -37,18 +37,20 @@ app.post("/login", async (req, res) => {
 });
 
 app.post("/register", async (req, res) => {
-  if (!req.body.email || !req.body.password) {
-    return res.status(400).json({ message: "Missing fields for login." });
+  if (!req.body.email || !req.body.password || !req.body.username) {
+    return res.status(400).json({ message: "Missing fields to register." });
   }
   const email = req.body.email;
   const password = req.body.password;
+  const username = req.body.username;
   try {
     const query = { email };
     const user = await users.findOne(query);
     if (!user) {
       const user_object = {
-        email: email,
-        password: password,
+        email,
+        password,
+        username,
         created_at: Date.now(),
         updated_at: "",
         verified: false,
@@ -67,7 +69,12 @@ app.post("/register", async (req, res) => {
 });
 
 app.post("/check-token", verifyToken, async (req, res) => {
-  res.status(200).json({ message: "Correct Token" });
+  const query = { _id: new ObjectId(req.userId) };
+  const user = await users.findOne(query);
+  if (user) {
+    return res.status(200).json({ message: "Correct Token", user });
+  }
+  res.status(400).json({ message: "User D.N.E" });
 });
 
 module.exports = app;
