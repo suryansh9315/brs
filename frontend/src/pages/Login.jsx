@@ -20,7 +20,7 @@ const Login = () => {
       if (!password) {
         return toast.error("Please enter a valid Password");
       }
-      const res = await fetch("http://localhost:8080/api/auth/login", {
+      const res = await fetch("https://brs-backend-z4da.onrender.com/api/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

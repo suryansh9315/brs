@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const RegisterSection = () => {
   return (
@@ -14,7 +15,7 @@ const RegisterSection = () => {
           journey, our platform is designed to cater to your every reading need.
         </div>
         <div className="hover:bg-[#f9f8f6] hover:text-black border transition-all duration-300 border-white mt-2 bg-[#0c1220] rounded text-white h-12 w-40 cursor-pointer text-sm flex items-center justify-center text-center">
-          Create Account
+          <Link to={'/register'}>Create Account</Link>
         </div>
       </div>
     </div>

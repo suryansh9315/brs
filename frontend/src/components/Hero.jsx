@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -11,7 +12,7 @@ const Hero = () => {
             in seconds.
           </div>
           <div className="hover:bg-[#f9f8f6] hover:text-black border transition-all duration-300 border-[#0c1220] mt-2 bg-[#0c1220] rounded text-white h-12 w-44 cursor-pointer text-sm flex items-center justify-center text-center">
-            Explore Now
+            <Link to={'/login'}>Explore Now</Link>
           </div>
         </div>
         <div className="w-2/3 flex gap-10 items-center justify-center">

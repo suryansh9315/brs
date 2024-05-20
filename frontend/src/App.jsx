@@ -5,6 +5,8 @@ import Register from "./pages/Register";
 import { useGlobalContext } from "./context/GlobalContext";
 import DashBoard from "./pages/DashBoard";
 import { Route, Routes } from "react-router-dom";
+import BookList from "./pages/BookList";
+import BookListSmall from "./components/BookListSmall";
 
 const App = () => {
   const { user } = useGlobalContext();
@@ -15,6 +17,7 @@ const App = () => {
         <>
           <Routes>
             <Route path="/" element={<DashBoard />} />
+            <Route path="/books" element={<BookList />} />
           </Routes>
         </>
       ) : (
@@ -23,6 +26,7 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/books" element={<BookListSmall />} />
           </Routes>
         </>
       )}

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const bestSellers = [
   {
@@ -33,7 +34,9 @@ const BestSellers = () => {
       <div className="flex flex-col gap-8">
         <div className="flex items-center justify-between">
           <div className="text-4xl font-bold">Bestrated</div>
-          <div className="cursor-pointer text-lg font-light">See all</div>
+          <div className="cursor-pointer text-lg font-light">
+            <Link to={'/books'}>See all</Link>
+          </div>
         </div>
         <div className="flex gap-4">
           {bestSellers.map((book, index) => (

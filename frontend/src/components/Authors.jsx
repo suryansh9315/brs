@@ -5,9 +5,9 @@ const Authors = () => {
     <div className="flex flex-col gap-16 pt-20 pb-10 px-20 bg-[#0c1220]">
       <div className="flex items-center justify-between">
         <div className="text-4xl font-semibold text-white">Get to know</div>
-        <div className="cursor-pointer text-lg font-light text-white">
+        {/* <div className="cursor-pointer text-lg font-light text-white">
           See all
-        </div>
+        </div> */}
       </div>
       <div className="flex gap-16 px-2">
         <div className="flex w-1/2 gap-3">

@@ -4,7 +4,7 @@ import contactAnimation from "../lottie/contact_1.json";
 
 const Contact = () => {
   return (
-    <div className="flex items-center justify-center p-20 py-28 gap-2">
+    <div className="flex items-center justify-center p-20 py-28 gap-2" id="contact">
       <div className="flex flex-col gap-10 w-1/3">
         <div className="text-4xl font-bold">Book a Consultation</div>
         <div className="flex flex-col gap-5 bg-gray-100 px-8 py-8 rounded-lg shadow-sm">

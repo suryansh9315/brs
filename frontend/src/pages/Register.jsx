@@ -28,7 +28,7 @@ const Register = () => {
       if (password !== cPassword) {
         return toast.error("Password doesn't match");
       }
-      const res = await fetch("http://localhost:8080/api/auth/register", {
+      const res = await fetch("https://brs-backend-z4da.onrender.com/api/auth/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

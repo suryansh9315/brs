@@ -19,7 +19,7 @@ export const GlobalContextProvider = ({ children }) => {
       const old_token_raw = localStorage.getItem("sessionToken");
       if (old_token_raw) {
         const old_token = JSON.parse(old_token_raw);
-        const res = await fetch("http://localhost:8080/api/auth/check-token", {
+        const res = await fetch("https://brs-backend-z4da.onrender.com/api/auth/check-token", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
