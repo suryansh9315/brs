@@ -63,7 +63,7 @@ const DashBoard = () => {
   return (
     <div>
       <Sidebar />
-      <div className="bg-blue-50 min-h-screen w-full pt-[76px] pl-[286px] pr-[30px] flex flex-col">
+      <div className="bg-blue-50 min-h-screen w-full pt-[76px] sm:pl-[286px] sm:pr-[30px] pl-10 pr-10 flex flex-col">
         <div className="relative shadow-sm">
           <AiOutlineSearch
             className="absolute top-[14px] left-4 text-xl text-gray-500 cursor-pointer"
@@ -78,7 +78,10 @@ const DashBoard = () => {
           {searchQuery && (
             <AiOutlineClose
               className="absolute top-[14px] right-4 text-xl text-gray-500 cursor-pointer"
-              onClick={() => setSearchQuery("")}
+              onClick={() => {
+                setSearchQuery("")
+                setFilteredBooks([])
+              }}
             />
           )}
           {filteredBooks.length > 0 && (

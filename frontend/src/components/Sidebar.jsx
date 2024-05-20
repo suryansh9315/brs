@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { useGlobalContext } from "../context/GlobalContext";
 import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   const { logout } = useGlobalContext();
+  const [open, setOpen] = useState(false)
 
   return (
     <div>
@@ -17,6 +18,7 @@ const Sidebar = () => {
                 aria-controls="logo-sidebar"
                 type="button"
                 className="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+                onClick={() => setOpen(!open)}
               >
                 <span className="sr-only">Open sidebar</span>
                 <svg
@@ -33,11 +35,11 @@ const Sidebar = () => {
                   ></path>
                 </svg>
               </button>
-              <a href="https://flowbite.com" className="flex ms-2 md:me-24">
+              <Link to={'/'} className="flex ms-2 md:me-24">
                 <span className="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap">
-                  Logo
+                  BRS
                 </span>
-              </a>
+              </Link>
             </div>
             <div className="flex items-center">
               <div className="flex items-center ms-3">
@@ -56,60 +58,6 @@ const Sidebar = () => {
                     />
                   </button>
                 </div>
-                <div
-                  className="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow "
-                  id="dropdown-user"
-                >
-                  <div className="px-4 py-3" role="none">
-                    <p className="text-sm text-gray-900" role="none">
-                      Neil Sims
-                    </p>
-                    <p
-                      className="text-sm font-medium text-gray-900 truncate"
-                      role="none"
-                    >
-                      neil.sims@flowbite.com
-                    </p>
-                  </div>
-                  <ul className="py-1" role="none">
-                    <li>
-                      <a
-                        href="#"
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                        role="menuitem"
-                      >
-                        Dashboard
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                        role="menuitem"
-                      >
-                        Books
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                        role="menuitem"
-                      >
-                        Wishlist
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                        role="menuitem"
-                      >
-                        Logout
-                      </a>
-                    </li>
-                  </ul>
-                </div>
               </div>
             </div>
           </div>
@@ -118,8 +66,8 @@ const Sidebar = () => {
 
       <aside
         id="logo-sidebar"
-        className="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0"
-        aria-label="Sidebar"
+        className={`${open ? 'translate-x-0' : '-translate-x-full'} fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0`}
+        arear-label="Sidebar"
       >
         <div className="h-full px-3 pb-4 overflow-y-auto bg-white">
           <ul className="space-y-2 font-medium">

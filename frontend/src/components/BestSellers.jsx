@@ -33,12 +33,12 @@ const BestSellers = () => {
     <div className="flex items-center justify-center p-20 py-28">
       <div className="flex flex-col gap-8">
         <div className="flex items-center justify-between">
-          <div className="text-4xl font-bold">Bestrated</div>
+          <div className="text-4xl font-bold">Best Sellers</div>
           <div className="cursor-pointer text-lg font-light">
             <Link to={'/books'}>See all</Link>
           </div>
         </div>
-        <div className="flex gap-4">
+        <div className="flex gap-4 flex-wrap">
           {bestSellers.map((book, index) => (
             <div className="flex flex-col" key={index}>
               <img

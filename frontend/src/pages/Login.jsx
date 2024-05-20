@@ -52,7 +52,7 @@ const Login = () => {
     <div className="min-h-screen bg-gray-100 text-gray-900 flex justify-center">
       <div className="max-w-screen-xl m-0 sm:m-20 bg-white shadow sm:rounded-lg flex justify-center flex-1">
         <div className="lg:w-1/2 xl:w-5/12 p-6 sm:p-12">
-          <div className="text-xl font-light text-center">Logo</div>
+          <div className="text-xl font-light text-center">BRS</div>
           <div className="mt-5 flex flex-col items-center">
             <h1 className="text-2xl xl:text-3xl font-semibold">Login</h1>
             <div className="w-full flex-1 mt-8">
@@ -123,9 +123,9 @@ const Login = () => {
                     className="w-6 h-6 -ml-2"
                     fill="none"
                     stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   >
                     <path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
                     <circle cx="8.5" cy="7" r="4" />

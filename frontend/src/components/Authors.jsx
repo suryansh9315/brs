@@ -9,8 +9,8 @@ const Authors = () => {
           See all
         </div> */}
       </div>
-      <div className="flex gap-16 px-2">
-        <div className="flex w-1/2 gap-3">
+      <div className="flex gap-16 px-2 lg:flex-row flex-col">
+        <div className="flex lg:w-1/2 w-full gap-3 sm:flex-row flex-col-reverse">
           <div className="flex flex-col gap-3">
             <div className="text-2xl font-light text-white">
               Friedrich Nietzsche
@@ -25,7 +25,7 @@ const Authors = () => {
           </div>
           <img src="/fn.webp" className="w-[40%] rounded-b-full" />
         </div>
-        <div className="flex w-1/2 gap-3">
+        <div className="flex lg:w-1/2 w-full gap-3 sm:flex-row flex-col-reverse">
           <div className="flex flex-col gap-3">
             <div className="text-2xl font-light text-white">
               Haruki Murakami

@@ -5,8 +5,10 @@ import Register from "./pages/Register";
 import { useGlobalContext } from "./context/GlobalContext";
 import DashBoard from "./pages/DashBoard";
 import { Route, Routes } from "react-router-dom";
-import BookList from "./pages/BookList";
+import BookList from "./components/BookList";
 import BookListSmall from "./components/BookListSmall";
+import ContactPage from "./pages/ContactPage";
+import AboutPage from "./pages/AboutPage";
 
 const App = () => {
   const { user } = useGlobalContext();
@@ -27,6 +29,7 @@ const App = () => {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/books" element={<BookListSmall />} />
+            <Route path="/contact" element={<ContactPage />} />
           </Routes>
         </>
       )}

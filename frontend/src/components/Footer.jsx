@@ -2,10 +2,10 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="px-40 pt-0 pb-0 bg-[#f9f8f6] gap-14 flex flex-col">
+    <div className="lg:px-40 px-20 pt-0 pb-0 bg-[#f9f8f6] gap-14 flex flex-col">
       <div className="flex gap-5 justify-between py-20">
         <div className="flex flex-col gap-3">
-          <div className="text-2xl font-semibold">Logo</div>
+          <div className="text-2xl font-semibold">BRS</div>
           <div className="flex flex-col gap-1">
             <div className="text-base font-light cursor-pointer">Home</div>
             <div className="text-base font-light cursor-pointer">Books</div>
@@ -20,7 +20,7 @@ const Footer = () => {
             <div className="text-base font-light cursor-pointer">Register</div>
           </div>
         </div>
-        <div className="flex flex-col gap-3">
+        <div className="hidden md:flex flex-col gap-3">
           <div className="text-2xl font-semibold">Privacy</div>
           <div className="flex flex-col gap-1">
             <div className="text-base font-light cursor-pointer">Terms of Use</div>
@@ -29,7 +29,7 @@ const Footer = () => {
             <div className="text-base font-light cursor-pointer">Contact</div>
           </div>
         </div>
-        <div className="flex flex-col gap-3">
+        <div className="hidden md:flex flex-col gap-3">
           <div className="text-2xl font-semibold">Follow us</div>
           <div className="flex flex-col gap-1">
             <div className="text-base font-light cursor-pointer">Instagram</div>
@@ -42,7 +42,7 @@ const Footer = () => {
           <div className="text-2xl font-semibold">Contact</div>
           <input
             type="text"
-            className="bg-white px-5 py-3 outline-none rounded border border-gray-200 w-[350px]"
+            className="bg-white px-5 py-3 outline-none rounded border border-gray-200 lg:w-[350px] sm:w-[250px] w-[150px]"
             placeholder="Enter your email"
           />
           <div className="hover:bg-[#f9f8f6] hover:text-black border transition-all duration-300 border-[#0c1220] mt-2 bg-[#0c1220] rounded text-white h-10 w-36 cursor-pointer text-sm flex items-center justify-center text-center">
