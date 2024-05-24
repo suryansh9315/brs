@@ -3,8 +3,9 @@ import { useGlobalContext } from "../context/GlobalContext";
 import { Link } from "react-router-dom";
 
 const Sidebar = () => {
-  const { logout } = useGlobalContext();
-  const [open, setOpen] = useState(false)
+  const { user, logout } = useGlobalContext();
+  const [open, setOpen] = useState(false);
+  console.log(user);
 
   return (
     <div>
@@ -35,29 +36,28 @@ const Sidebar = () => {
                   ></path>
                 </svg>
               </button>
-              <Link to={'/'} className="flex ms-2 md:me-24">
+              <Link to={"/"} className="flex ms-2 md:me-24">
                 <span className="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap">
                   BRS
                 </span>
               </Link>
             </div>
             <div className="flex items-center">
-              <div className="flex items-center ms-3">
-                <div>
-                  <button
-                    type="button"
-                    className="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300"
-                    aria-expanded="false"
-                    data-dropdown-toggle="dropdown-user"
-                  >
-                    <span className="sr-only">Open user menu</span>
-                    <img
-                      className="w-8 h-8 rounded-full"
-                      src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
-                      alt="user photo"
-                    />
-                  </button>
-                </div>
+              <div className="flex items-center ms-3 gap-3">
+                <div className="text-base font-normal">{user.username}</div>
+                <button
+                  type="button"
+                  className="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300"
+                  aria-expanded="false"
+                  data-dropdown-toggle="dropdown-user"
+                >
+                  <span className="sr-only">Open user menu</span>
+                  <img
+                    className="w-8 h-8 rounded-full"
+                    src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
+                    alt="user photo"
+                  />
+                </button>
               </div>
             </div>
           </div>
@@ -66,14 +66,16 @@ const Sidebar = () => {
 
       <aside
         id="logo-sidebar"
-        className={`${open ? 'translate-x-0' : '-translate-x-full'} fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0`}
+        className={`${
+          open ? "translate-x-0" : "-translate-x-full"
+        } fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0`}
         arear-label="Sidebar"
       >
         <div className="h-full px-3 pb-4 overflow-y-auto bg-white">
           <ul className="space-y-2 font-medium">
             <li>
               <Link
-                to={'/'}
+                to={"/"}
                 className="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group"
               >
                 <svg

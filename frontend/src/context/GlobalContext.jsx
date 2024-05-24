@@ -5,38 +5,47 @@ export const GlobalContext = createContext();
 
 export const GlobalContextProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  const [token, setToken] = useState(null);
   const [loading, setLoading] = useState(true);
 
   const logout = () => {
     localStorage.removeItem("userInfo");
-    localStorage.removeItem("sessionToken");
-    setToken(null);
     setUser(null);
+    window.location.reload();
   };
 
   const findOldUser = async () => {
     try {
-      const old_token_raw = localStorage.getItem("sessionToken");
-      if (old_token_raw) {
-        const old_token = JSON.parse(old_token_raw);
-        const res = await fetch(
-          "https://brs-backend-z4da.onrender.com/api/auth/check-token",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              token: old_token,
-            }),
+      const old_user = localStorage.getItem("userInfo");
+      // const theUser = localStorage.getItem("user");
+      // if (theUser && !theUser.includes("undefined")) {
+      //   return setUser(JSON.parse(theUser));
+      // }
+      if (old_user) {
+        const old_user_info = JSON.parse(old_token_raw);
+        if (old_user_info.type === "email") {
+          const res = await fetch(
+            "https://brs-backend-z4da.onrender.com/api/auth/check-token",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                token: old_user_info.token,
+              }),
+            }
+          );
+          const data = await res.json();
+          console.log(data);
+          if (res.status === 200) {
+            setUser({ user: data.user, token: data.token, type: "email" });
           }
-        );
-        const data = await res.json();
-        console.log(data);
-        if (res.status === 200) {
-          setToken(old_token);
-          setUser(data.user);
+        } else {
+          setUser({
+            user: old_user_info.user,
+            token: old_user_info.token,
+            type: "google",
+          });
         }
       }
     } catch (error) {

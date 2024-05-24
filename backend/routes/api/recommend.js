@@ -9,7 +9,7 @@ const db = mongoClient.db("brs");
 const users = db.collection("users");
 const app = express.Router();
 
-app.post("/getRecommendations", verifyToken, async (req, res) => {
+app.post("/getRecommendations", async (req, res) => {
   const bookName = req.body.bookName;
   try {
     const response = await fetch(

@@ -6,7 +6,7 @@ import toast, { Toaster } from "react-hot-toast";
 import Sidebar from "../components/Sidebar";
 
 const DashBoard = () => {
-  const { token } = useGlobalContext();
+  const { user } = useGlobalContext();
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredBooks, setFilteredBooks] = useState([]);
   const [recommendedBooks, setRecommendedBooks] = useState([]);
@@ -30,7 +30,6 @@ const DashBoard = () => {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            token,
             bookName: selectedBook.title,
           }),
         }
