@@ -12,7 +12,7 @@ const Register = () => {
   const [cPassword, setCPassword] = useState("");
   const navigate = useNavigate();
   const { handleGoogle, loading, error } = useFetch(
-    "http://localhost:8080/google-register"
+    "https://brs-backend-z4da.onrender.com/api/auth/google-register"
   );
 
   const handleSubmit = async () => {

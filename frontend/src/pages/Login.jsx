@@ -12,7 +12,7 @@ const Login = () => {
   const navigate = useNavigate();
   const { setUser } = useGlobalContext();
   const { handleGoogle, loading, error } = useFetch(
-    "http://localhost:8080/google-login"
+    "https://brs-backend-z4da.onrender.com/api/auth/google-login"
   );
 
   const handleSubmit = async () => {
