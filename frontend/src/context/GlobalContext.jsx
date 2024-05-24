@@ -16,12 +16,8 @@ export const GlobalContextProvider = ({ children }) => {
   const findOldUser = async () => {
     try {
       const old_user = localStorage.getItem("userInfo");
-      // const theUser = localStorage.getItem("user");
-      // if (theUser && !theUser.includes("undefined")) {
-      //   return setUser(JSON.parse(theUser));
-      // }
       if (old_user) {
-        const old_user_info = JSON.parse(old_token_raw);
+        const old_user_info = JSON.parse(old_user);
         if (old_user_info.type === "email") {
           const res = await fetch(
             "https://brs-backend-z4da.onrender.com/api/auth/check-token",

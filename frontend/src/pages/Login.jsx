@@ -106,12 +106,10 @@ const Login = () => {
                   <span className="ml-4">Login with Google</span>
                 </button>
               </div> */}
-              {!loading && (
                 <div
                   id="loginDiv"
-                  className="flex items-center justify-center"
+                  className={`flex items-center justify-center ${loading ? 'pointer-events-none' : ''}`}
                 ></div>
-              )}
 
               <div className="mx-auto max-w-xs">
                 <input

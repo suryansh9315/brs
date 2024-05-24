@@ -9,7 +9,7 @@ const Sidebar = () => {
 
   return (
     <div>
-      <nav className="fixed top-0 z-50 w-full bg-white border-b border-gray-200">
+      <nav className="fixed top-0 z-50 w-full bg-[#0c1220] text-white">
         <div className="px-3 py-3 lg:px-5 lg:pl-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center justify-start rtl:justify-end">
@@ -44,7 +44,7 @@ const Sidebar = () => {
             </div>
             <div className="flex items-center">
               <div className="flex items-center ms-3 gap-3">
-                <div className="text-base font-normal">{user.username}</div>
+                <div className="text-base font-normal">{user.type === 'google' ? user.user.firstName : user.user.username}</div>
                 <button
                   type="button"
                   className="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300"
@@ -68,15 +68,15 @@ const Sidebar = () => {
         id="logo-sidebar"
         className={`${
           open ? "translate-x-0" : "-translate-x-full"
-        } fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0`}
+        } fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-[#0c1220] text-white border-r border-gray-200 sm:translate-x-0`}
         arear-label="Sidebar"
       >
-        <div className="h-full px-3 pb-4 overflow-y-auto bg-white">
+        <div className="h-full px-3 pb-4 overflow-y-auto bg-[#0c1220] text-white">
           <ul className="space-y-2 font-medium">
             <li>
               <Link
                 to={"/"}
-                className="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group"
+                className="flex items-center p-2 text-white hover:text-black rounded-lg hover:bg-gray-100 group"
               >
                 <svg
                   className="w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900"
@@ -94,7 +94,7 @@ const Sidebar = () => {
             <li>
               <Link
                 to={"/books"}
-                className="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group"
+                className="flex items-center p-2 text-white hover:text-black rounded-lg hover:bg-gray-100 group"
               >
                 <svg
                   className="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900"
@@ -128,7 +128,7 @@ const Sidebar = () => {
             <li onClick={logout}>
               <a
                 href="#"
-                className="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group"
+                className="flex items-center p-2 text-white hover:text-black rounded-lg hover:bg-gray-100 group"
               >
                 <svg
                   className="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900"
