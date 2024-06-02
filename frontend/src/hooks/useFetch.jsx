@@ -35,6 +35,7 @@ const useFetch = (url) => {
             })
           );
           navigate("/");
+          return
         }
         toast.error(data?.message || data);
         throw new Error(data?.message || data);

@@ -19,6 +19,13 @@ const DashBoard = () => {
     setFilteredBooks(books);
   };
 
+  const handleKeyDown = (e) => {
+    e.preventDefault();
+    if (e.key === "Enter") {
+      handleSearch();
+    }
+  };
+
   const fetchRecommendations = async () => {
     console.log("fetching...");
     try {
@@ -42,7 +49,7 @@ const DashBoard = () => {
           const book = AllBooks.filter((book) => book.title === title);
           list.push(book[0]);
         }
-        console.log(list)
+        console.log(list);
         setRecommendedBooks(list);
       } else {
         toast.error("Something went wrong");
@@ -73,13 +80,14 @@ const DashBoard = () => {
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search for Keywords"
             className="bg-white h-12 px-12 rounded-lg focus:outline-none w-full"
+            onKeyUp={(e) => handleKeyDown(e)}
           />
           {searchQuery && (
             <AiOutlineClose
               className="absolute top-[14px] right-4 text-xl text-gray-500 cursor-pointer"
               onClick={() => {
-                setSearchQuery("")
-                setFilteredBooks([])
+                setSearchQuery("");
+                setFilteredBooks([]);
               }}
             />
           )}
@@ -139,9 +147,7 @@ const DashBoard = () => {
                   />
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex flex-col gap-1">
-                      <div className="text-lg font-semibold">
-                        {book.title}
-                      </div>
+                      <div className="text-lg font-semibold">{book.title}</div>
                       <div className="font-light text-sm">{book.author}</div>
                     </div>
                   </div>
