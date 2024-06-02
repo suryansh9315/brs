@@ -16,11 +16,15 @@ const Register = () => {
   );
 
   const handleSubmit = async () => {
+    const re = /\S+@\S+\.\S+/
     try {
       if (!username) {
         return toast.error("Please enter a valid Username");
       }
       if (!email) {
+        return toast.error("Please enter a valid Email");
+      }
+      if (!re.test(email)) {
         return toast.error("Please enter a valid Email");
       }
       if (!password) {

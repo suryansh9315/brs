@@ -68,10 +68,32 @@ const Footer = () => {
         <div className="hidden md:flex flex-col gap-3">
           <div className="text-2xl font-semibold">Follow us</div>
           <div className="flex flex-col gap-1">
-            <div className="text-base font-light cursor-pointer">Instagram</div>
-            <div className="text-base font-light cursor-pointer">Facebook</div>
-            <div className="text-base font-light cursor-pointer">Twitter</div>
-            <div className="text-base font-light cursor-pointer">Youtube</div>
+            <div className="text-base font-light cursor-pointer">
+              <a
+                href="https://www.instagram.com/bookrecommendationsystem?igsh=anY4aDZyaThxZzJz"
+                target="_blank"
+              >
+                Instagram
+              </a>
+            </div>
+            <div className="text-base font-light cursor-pointer">
+              <a
+                href="https://x.com/BookRecomm77131?t=v6X6yBemwZ_D_TpnCmJ2Qg&s=09"
+                target="_blank"
+              >
+                Twitter
+              </a>
+            </div>
+            <div className="text-base font-light cursor-pointer">
+              <a href="https://github.com/sjoshi9911" target="_blank">
+                Github - Shashank
+              </a>
+            </div>
+            <div className="text-base font-light cursor-pointer">
+              <a href="https://github.com/MayankKumar2024" target="_blank">
+                Github - Mayank
+              </a>
+            </div>
           </div>
         </div>
         <div className="flex flex-col gap-3">
@@ -85,7 +107,10 @@ const Footer = () => {
               onChange={(e) => setEmail(e.target.value)}
               name="reply_to"
             />
-            <div onClick={sendEmail} className="hover:bg-[#f9f8f6] hover:text-black border transition-all duration-300 border-[#0c1220] mt-5 bg-[#0c1220] rounded text-white h-10 w-36 cursor-pointer text-sm flex items-center justify-center text-center">
+            <div
+              onClick={sendEmail}
+              className="hover:bg-[#f9f8f6] hover:text-black border transition-all duration-300 border-[#0c1220] mt-5 bg-[#0c1220] rounded text-white h-10 w-36 cursor-pointer text-sm flex items-center justify-center text-center"
+            >
               Send Email
             </div>
           </form>
